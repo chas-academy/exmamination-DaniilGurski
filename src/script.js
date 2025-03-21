@@ -50,7 +50,7 @@ incomeBtn.addEventListener("click", () => {
   incomeListElement.innerHTML = "";
   incomeList.forEach((income) => {
     const incomeItem = document.createElement("li");
-    incomeItem.innerText = `${description} - ${income} kr`;
+    incomeItem.innerText = `${description} - ${income} kr (Inkomst)`;
     incomeListElement.append(incomeItem);
   });
 
@@ -77,7 +77,7 @@ expenseBtn.addEventListener("click", () => {
   expenseListElement.innerHTML = "";
   expenseList.forEach((expense) => {
     const expenseItem = document.createElement("li");
-    expenseItem.innerText = `${description} - ${expense} kr`;
+    expenseItem.innerText = `${description} - ${expense} kr (Utgift)`;
     expenseListElement.append(expenseItem);
   });
 
