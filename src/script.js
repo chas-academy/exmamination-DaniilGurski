@@ -29,7 +29,7 @@ incomeBtn.addEventListener("click", () => {
   // Update income list and balance
   incomeList.push({ description, amount });
   balance += amount;
-  balanceElement.innerText = balance;
+  balanceElement.innerHTML = balance;
 
   // Update HTML income list
   incomeListElement.innerHTML = "";
