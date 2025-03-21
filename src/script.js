@@ -24,7 +24,7 @@ function addTransaction(description, amount, type) {
   transactionListElement.innerHTML = "";
   transactionList.forEach((transaction) => {
     const transactionItem = document.createElement("li");
-    transactionItem.innerText = `${transaction.description} - ${transaction.amount} kr (${type})`;
+    transactionItem.innerText = `${transaction.description} - ${transaction.amount} kr (${transaction.type})`;
     transactionListElement.append(transactionItem);
   });
 }
@@ -46,7 +46,6 @@ incomeBtn.addEventListener("click", () => {
   balanceElement.innerText = balance;
 
   // Update HTML income list
-
   incomeListElement.innerHTML = "";
   incomeList.forEach((income) => {
     const incomeItem = document.createElement("li");
