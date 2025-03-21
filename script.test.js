@@ -5,7 +5,6 @@
 // In most Jest setups, you do *not* need to import { expect } from "@jest/globals";
 // Jest provides a global `expect` automatically.
 
-
 // ...existing code...
 describe("Transaction functionality", () => {
   beforeEach(() => {
@@ -34,8 +33,7 @@ describe("Transaction functionality", () => {
     amountInput.value = amount;
     incomeBtn.click();
 
-    expect(document.getElementById("incomeList").textContent)
-      .toContain(`${description} - ${amount} kr (Inkomst)`);
+    expect(document.getElementById("incomeList").textContent).toContain(`${description} - ${amount} kr (Inkomst)`);
     expect(document.getElementById("balance").textContent).toBe(amount);
   });
 
@@ -51,9 +49,7 @@ describe("Transaction functionality", () => {
     amountInput.value = amount;
     expenseBtn.click();
 
-    expect(document.getElementById("expenseList").textContent)
-      .toContain(`${description} - ${amount} kr (Utgift)`);
+    expect(document.getElementById("expenseList").textContent).toContain(`${description} - ${amount} kr (Utgift)`);
     expect(document.getElementById("balance").textContent).toBe(`-${amount}`);
   });
 });
-
