@@ -5,7 +5,6 @@ const incomeBtn = document.querySelector("#incomeBtn");
 const expenseBtn = document.querySelector("#expenseBtn");
 const incomeListElement = document.querySelector("#incomeList");
 const expenseListElement = document.querySelector("#expenseList");
-const transactionListElement = document.querySelector("#transactionList");
 const balanceElement = document.querySelector("#balance");
 const incomeList = [];
 const expenseList = [];
@@ -21,7 +20,7 @@ incomeBtn.addEventListener("click", () => {
   const amount = Number(amountField.value);
   const description = descriptionField.value;
 
-  if (amount === "" || description === "") {
+  if (amount === 0 || description === "") {
     return;
   }
 
@@ -32,6 +31,7 @@ incomeBtn.addEventListener("click", () => {
   balance += amount;
   balanceElement.innerText = balance;
 
+  // Update HTML income list
   incomeListElement.innerHTML = "";
   incomeList.forEach((income) => {
     const incomeItem = document.createElement("li");
@@ -45,17 +45,20 @@ expenseBtn.addEventListener("click", () => {
   const amount = Number(amountField.value);
   const description = descriptionField.value;
 
-  if (amount === "" || description === "") {
+  console.log(amount);
+
+  if (amount === 0 || description === "") {
     return;
   }
 
   emptyInputFields();
 
-  // Update income list and balance
-  expenseList.push({ description, amount, type: "Utgift" });
+  // Update expense list and balance
+  expenseList.push({ description, amount });
   balance -= amount;
   balanceElement.innerHTML = balance;
 
+  // Update HTML expense list
   expenseListElement.innerHTML = "";
   expenseList.forEach((expense) => {
     const expenseItem = document.createElement("li");
